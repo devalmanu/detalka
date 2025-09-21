@@ -1,0 +1,51 @@
+.pagination {
+    @include flex-w-start;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 6px;
+    margin-top: 24px;
+    .catalog__content--category & {
+        margin-top: 36px;
+        @include breakpoint(mobileonly) {
+            margin-top: 24px;
+        }
+    }
+    &__link {
+        @include flex-all-center;
+        font-family: $Gilroy-Medium;
+        font-size: 14px;
+        line-height: 1.45;
+        color: $color-black;
+        background: $color-white;
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        border: 1px solid $color-grey-stroke;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.25s ease;
+        flex-shrink: 0;
+        &.active {
+            padding: 10px 15px;
+            color: $color-white;
+            background: $accent;
+            border-color: $accent;
+            cursor: default;
+            pointer-events: none;
+        }
+        &:hover {
+            background: $color-grey-light;
+            border: 1px solid $color-grey-light;
+        }
+    }
+    div {
+        color: $color-grey;
+        font-family: $Gilroy-Medium;
+        margin-left: 18px;
+        @include breakpoint(mobileonly) {
+            width: 100%;
+            // margin-left: 0;
+            display: none;
+        }
+    }
+}

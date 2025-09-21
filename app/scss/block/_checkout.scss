@@ -1,0 +1,249 @@
+.checkout {
+    &__content {
+        display: flex;
+        align-items: flex-start;
+        margin-top: 6px;
+        @include breakpoint(tablet) {
+            flex-direction: column-reverse;
+            row-gap: 24px;
+        }
+        @include breakpoint(mobileonly) {
+            margin-top: 0;
+            row-gap: 18px;
+        }
+
+        &--empty {
+            font-family: $Gilroy-Regular;
+            font-size: 14px;
+            line-height: 1.45;
+            color: $color-grey;
+            a {
+                color: $accent;
+                &:hover {
+                    color: $accent-hover;
+                }
+            }
+        }
+    }
+
+    &__body {
+        width: calc(100% - 513px);
+        margin-right: 120px;
+        @include breakpoint(bigdesktop) {
+            width: calc(100% - 478px);
+            margin-right: 84px;
+        }
+        @include breakpoint(desktop) {
+            width: calc(100% - 388px);
+            margin-right: 48px;
+        }
+        @include breakpoint(tablet) {
+            width: 100%;
+            margin-right: 0;
+        }
+    }
+
+    &__form-step {
+        &:not(:last-child) {
+            margin-bottom: 24px;
+            @include breakpoint(mobileonly) {
+                margin-bottom: 18px;
+            }
+        }
+    }
+
+    &__step {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        &-header {
+            font-family: $Gilroy-Bold;
+            font-size: 24px;
+            line-height: 1.25;
+            margin-bottom: 24px;
+            @include breakpoint(mobileonly) {
+                font-size: 20px;
+                margin-bottom: 18px;
+            }
+        }
+
+        &-desc {
+            margin-bottom: 24px;
+            @include breakpoint(mobileonly) {
+                margin-bottom: 18px;
+            }
+        }
+
+        &-buttons {
+            display: flex;
+            column-gap: 12px;
+            .btn-accent,
+            .btn-grey {
+                font-size: 16px;
+                line-height: 1.5;
+                padding: 11px 17px;
+            }
+        }
+
+        &.checkout__step-column {
+            display: flex;
+            flex-direction: column;
+            .summary__row {
+                @include breakpoint(mobileonly) {
+                    margin-bottom: 12px;
+                }
+                &.summary__row--price,
+                &.summary__row--promo {
+                    padding: 0 24px;
+                    @include breakpoint(mobileonly) {
+                        padding: 0 18px;
+                    }
+                }
+                &.summary__row--price {
+                    margin-bottom: 6px;
+                }
+            }
+        }
+    }
+    &__summary {
+        flex-shrink: 0;
+        width: 393px;
+        @include breakpoint(desktop) {
+            width: 340px;
+        }
+        @include breakpoint(tablet) {
+            width: 100%;
+        }
+    }
+    &__product {
+        padding-top: 18px;
+        padding-bottom: 18px;
+        border-bottom: 1px solid $color-grey-stroke;
+        @include breakpoint(mobileonly) {
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    &__types {
+        display: flex;
+        flex-direction: column;
+        margin-top: -9px;
+    }
+    &__tab {
+        padding: 36px 0 0;
+        @include breakpoint(mobileonly) {
+            padding: 15px 0 0;
+        }
+        &:empty {
+            padding: 6px 0;
+        }
+    }
+    .checkoutType {
+        width: min-content;
+        display: flex;
+        align-items: center;
+        column-gap: 12px;
+        padding: 9px 0;
+        &__text {
+            white-space: nowrap;
+        }
+    }
+    .checkoutPlace {
+        &__input {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+        &__block {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            row-gap: 18px;
+        }
+        &__name {
+            display: inline-block;
+            font-family: $Gilroy-Medium;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+    }
+
+    .products-item {
+        &__all-price {
+            .info {
+                margin: 0;
+                font-family: $Gilroy-Bold;
+                font-size: 16px;
+                line-height: 1.5;
+                white-space: nowrap;
+            }
+        }
+    }
+    .product {
+        display: flex;
+        &__main {
+            width: calc(100% - 90px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            column-gap: 24px;
+            @include breakpoint(laptop) {
+                position: relative;
+                flex-wrap: wrap;
+                row-gap: 12px;
+            }
+            @include breakpoint(mobileonly) {
+                row-gap: 6px;
+            }
+        }
+        &__info {
+            display: flex;
+            flex-direction: column;
+            row-gap: 12px;
+            width: max-content;
+            max-width: 100%;
+        }
+        &__img {
+            margin-right: 18px;
+            flex-shrink: 0;
+            img {
+                width: 72px;
+                height: 72px;
+                flex-shrink: 0;
+                border-radius: 8px;
+                object-fit: contain;
+            }
+        }
+        &__name {
+            margin-bottom: 0;
+            font-family: $Gilroy-Medium;
+            font-size: 14px;
+            line-height: 1.45;
+            color: $color-black;
+            transition: color 250ms ease;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+            -o-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+            white-space: normal;
+            &:hover {
+                color: $accent;
+            }
+        }
+        &__code {
+            color: $color-grey;
+            span {
+                font-size: 12px;
+                line-height: 1.35;
+                color: $color-grey;
+            }
+        }
+    }
+}

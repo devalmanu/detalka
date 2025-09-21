@@ -1,0 +1,9 @@
+@import "_mixins/font-face";
+
+@include font-face("Geometria-Regular", "../fonts/Geometria-Regular", 400, normal);
+@include font-face("Geometria-Medium", "../fonts/Geometria-Medium", 500, normal);
+@include font-face("Geometria-Bold", "../fonts/Geometria-Bold", 700, normal);
+
+@include font-face("Gilroy-Regular", "../fonts/Gilroy-Regular", 400, normal);
+@include font-face("Gilroy-Medium", "../fonts/Gilroy-Medium", 500, normal);
+@include font-face("Gilroy-Bold", "../fonts/Gilroy-Bold", 700, normal);

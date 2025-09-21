@@ -1,0 +1,102 @@
+.page_body {
+    .breadcrumbs {
+        position: relative;
+        padding: 0 0 24px;
+        background: transparent;
+        margin-bottom: 0;
+        z-index: 5;
+
+        .single-main & {
+            @include breakpoint(mobileonly) {
+                padding-right: 0;
+                margin-right: -18px;
+            }
+        }
+
+        &__list {
+            position: relative;
+            @include flex-v-center;
+            flex-wrap: nowrap;
+            gap: 28px;
+            margin-top: 6px;
+            @include breakpoint(mobileonly) {
+                margin-top: 0;
+            }
+        }
+
+        &__item {
+            position: relative;
+            @include flex-all-center;
+            white-space: nowrap;
+            &::after {
+                content: "";
+                position: absolute;
+                display: block;
+                width: 6px;
+                height: 10px;
+                top: 6px;
+                right: -16px;
+                background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNiIgaGVpZ2h0PSIxMCIgdmlld0JveD0iMCAwIDYgMTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0wLjc0NDU2NiAxLjA3NzU3QzEuMDcgMC43NTIxMzcgMS41OTY4NiAwLjc1MjEzNyAxLjkyMjMgMS4wNzc1N0w1LjI1NjI5IDQuNDEwNThDNS41ODE1NiA0LjczNjAzIDUuNTgxNjcgNS4yNjM5MSA1LjI1NjI5IDUuNTg5MjlMMS45MjIzIDguOTIyM0MxLjU5NjkgOS4yNDc1MiAxLjA2OTk2IDkuMjQ3NTIgMC43NDQ1NjYgOC45MjIzQzAuNDE5MTI5IDguNTk2ODYgMC40MTkxMjkgOC4wNjkwMyAwLjc0NDU2NiA3Ljc0MzU5TDMuNDg3NzMgNC45OTk0NUwwLjc0NDU2NiAyLjI1NTMxQzAuNDE5MTI5IDEuOTI5ODcgMC40MTkxMjkgMS40MDMwMSAwLjc0NDU2NiAxLjA3NzU3WiIgZmlsbD0iI0U5QkIwRCIvPgo8L3N2Zz4K)
+                    no-repeat center;
+                @include breakpoint(tablet) {
+                    width: 6px;
+                    height: 100%;
+                    top: -1px;
+                    right: -17px;
+                }
+            }
+            &:last-child {
+                overflow: hidden;
+                &:after {
+                    display: none;
+                }
+                a {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    @include breakpoint(tablet) {
+                        text-overflow: inherit;
+                    }
+                }
+            }
+        }
+
+        &__link {
+            font-size: 14px;
+            line-height: 1.45;
+            color: $color-grey;
+            transition: all 0.25s;
+            white-space: nowrap;
+            &.breadcrumbs__current,
+            &[href^="javascript:void(0)"],
+            &.active {
+                color: $color-black;
+                cursor: default;
+                pointer-events: none;
+            }
+        }
+
+        &__title {
+            margin-top: 16px;
+            .single-main & {
+                @include breakpoint(mobileonly) {
+                    padding-right: 2.5%;
+                }
+            }
+        }
+
+        .title-page {
+            margin-bottom: 20px;
+            @include breakpoint(mobileonly) {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .single-main {
+        .breadcrumbs__title {
+            @include breakpoint(mobileonly) {
+                padding-right: 2.5%;
+            }
+        }
+    }
+}
