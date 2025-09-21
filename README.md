@@ -1,12 +1,6 @@
-<h1><strong>OptimizedHTML:</strong> <br>Startup HTML template based on Gulp & Bootstrap 5</h1>
+<h1><strong>OptimizedHTML:</strong> <br>проект "Деталька"</h1>
 
-<p>
-	<img src="https://raw.githubusercontent.com/agragregra/OptimizedHTML-4/master/app/img/_src/preview.jpg" alt="Start HTML Template">
-</p>
-
-<p>OptimizedHTML — это полнофункциональный HTML5-шаблон стартовой страницы с поддержкой Bootstrap 5 (сетка и перезагрузка), Gulp, Sass, Browsersync, Autoprefixer, Clean-CSS, Uglify, Rsync и Bower (путь к библиотекам). Шаблон содержит файл <strong>.htaccess</strong>  с правилами кэширования для веб-сервера.</p>
-
-<p><strong>OptimizedHTML 4</strong> стартовый шаблон использует лучшие практики веб-разработки.</p>
+<p>Сборка Gulp: Sass, Browsersync, Autoprefixer, Clean-CSS, Uglify, Rsync и Bower (путь к библиотекам). Шаблон содержит файл <strong>.htaccess</strong>  с правилами кэширования для веб-сервера.</p>
 
 <p>Кроссбраузерная совместимость: IE9+.</p>
 
@@ -47,7 +41,6 @@
 
 <p>Пример:</p>
 <code>
-
 	<button class="btn" data-path="form-popup">Окно 1</button>
 	<button class="btn" data-path="me-popup">Окно 2</button>
 	<div class="modals">
@@ -60,5 +53,14 @@
 			</div>
 		</div>
 	</div>
-
 </code>
+
+
+<h2>Комментарии</h2>
+<p><strong>На странице оформления заказа:</strong></p>
+	<ul>
+		<li>на 2 шаге выбора "способа доставки" в дизайне прорисован только один вариант отображения, для корректной работы и сброса данных для валидации формы при переключении значений с доставки https://prnt.sc/0VmSXO4EkU97 на самовывоз https://prnt.sc/8qOV01OQ8vFJ изменяется вывод информации </li>
+		подобный случай сделан в дизайне в на 3 шаге  "Способ оплаты", по такой же логике переключения и вывода како-либо подробной информации по оплате ниже при смене оплат можно создать уже на этапе программирования (опираясь на 2 пункт шага)
+		<li>сделано условие в JS - без согласия с политикой конфидденциальности форму нельзя отправить https://prnt.sc/w4ppKKi77OaZ
+		после проставления галочки, после кнопка формы станет активной</li>
+	</ul>
